@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!-- font awesome -->
+  <script src="https://kit.fontawesome.com/249306a34c.js" crossorigin="anonymous"></script>
+  <!-- css -->
+  <link rel="stylesheet" href="styles.css">
+  <title>To Do List</title>
+</head>
+<body>
+  <div class="container">
+    <!-- search to do -->
+    <header class="text-center text-light my-4">
+      <h1 class="mb-4">Todo list</h1>
+      <form class="search">
+        <input type="text" class="form-control m-auto" name="search" placeholder="search todos">
+      </form>
+    </header>
+
+    <!-- to do list -->
+    <ul class="list-group todos mx-auto text-light"></ul>
+    <div class="clear">
+      <a class="btn btn-light my-3"> clear todos..</a>
+    </div>
+
+    <!-- add to do -->
+    <form class="text-center my-4 add">
+      <label class="text-light">Add a new todo...</label>
+      <input type="text" class="form-control m-auto taskinput" name="add" placeholder="add todo...">
+      <input type="submit" value="submit" class="btn btn-light my-3">
+    </form>
+
+
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
