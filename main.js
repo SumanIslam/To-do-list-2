@@ -1,6 +1,6 @@
 const addForm = document.querySelector('.add');
 const taskInput = document.querySelector('.taskinput');
-const ul = document.querySelector('.todos');
+const list = document.querySelector('.todos');
 const clear = document.querySelector('.clear');
 const search = document.querySelector('.search input');
 
@@ -15,13 +15,13 @@ const generateTemplate = todo => {
     </li>
   `;
 
-  ul.innerHTML += html;
+  list.innerHTML += html;
 };
 
 
 // clear todos btn function
 const clearTodoBtn = () => {
-  if (ul.children.length) {
+  if (list.children.length) {
     clear.style.display = 'block';
   } else {
     clear.style.display = 'none';
@@ -30,10 +30,10 @@ const clearTodoBtn = () => {
 
 // filter tasks function
 const filterTasks = text => {
-  Array.from(ul.children)
+  Array.from(list.children)
     .filter(todo => !todo.textContent.toLowerCase().includes(text))
     .forEach(todo => todo.classList.add('filtered'));  
-  Array.from(ul.children)
+  Array.from(list.children)
     .filter(todo => todo.textContent.toLowerCase().includes(text))
     .forEach(todo => todo.classList.remove('filtered'));  
 }
@@ -56,7 +56,7 @@ addForm.addEventListener('submit', e => {
 });
 
 // remove task
-ul.addEventListener('click', e => {
+list.addEventListener('click', e => {
   if (e.target.classList.contains('delete')) {
     e.target.parentElement.remove();
   }
@@ -64,13 +64,15 @@ ul.addEventListener('click', e => {
   // remove clear btn
   clearTodoBtn();
 
+  e.preventDefault();
+
 });
 
 // clear tasks
 clear.addEventListener('click', e => {
-  // ul.innerHTML = '';
-  while(ul.firstChild) {
-    ul.removeChild(ul.firstChild);
+  // list.innerHTML = '';
+  while(list.firstChild) {
+    list.removeChild(list.firstChild);
   }
   // remove clear btn
   clearTodoBtn();
