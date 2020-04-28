@@ -23,3 +23,6 @@ input[type=text]:focus {
   text-align: center;
   display: none;
 }
+.filtered {
+  display: none !important;
+}

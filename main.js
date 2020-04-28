@@ -2,9 +2,10 @@ const addForm = document.querySelector('.add');
 const taskInput = document.querySelector('.taskinput');
 const ul = document.querySelector('.todos');
 const clear = document.querySelector('.clear');
+const search = document.querySelector('.search input');
 
 
-// generate a html template
+// generate a html template function
 
 const generateTemplate = todo => {
   let html = `
@@ -16,6 +17,27 @@ const generateTemplate = todo => {
 
   ul.innerHTML += html;
 };
+
+
+// clear todos btn function
+const clearTodoBtn = () => {
+  if (ul.children.length) {
+    clear.style.display = 'block';
+  } else {
+    clear.style.display = 'none';
+  }
+}
+
+// filter tasks function
+const filterTasks = text => {
+  Array.from(ul.children)
+    .filter(todo => !todo.textContent.toLowerCase().includes(text))
+    .forEach(todo => todo.classList.add('filtered'));  
+  Array.from(ul.children)
+    .filter(todo => todo.textContent.toLowerCase().includes(text))
+    .forEach(todo => todo.classList.remove('filtered'));  
+}
+
 
 // add task
 addForm.addEventListener('submit', e => {
@@ -40,11 +62,7 @@ ul.addEventListener('click', e => {
   }
 
   // remove clear btn
-  if(ul.children.length) {
-    clear.style.display = 'block';
-  } else {
-    clear.style.display = 'none';
-  }
+  clearTodoBtn();
 
 });
 
@@ -54,7 +72,18 @@ clear.addEventListener('click', e => {
   while(ul.firstChild) {
     ul.removeChild(ul.firstChild);
   }
+  // remove clear btn
+  clearTodoBtn();
+  
 })
 
 // search task
+search.addEventListener('keyup', e => {
+  const text = search.value.trim().toLowerCase();
+  
+  filterTasks(text);
+
+  e.preventDefault();
+})
+
 
