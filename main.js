@@ -19,7 +19,7 @@ const generateTemplate = todo => {
 };
 
 
-// clear todos btn function
+// clear todo btn function
 const clearTodoBtn = () => {
   if (list.children.length) {
     clear.style.display = 'block';
@@ -41,22 +41,26 @@ const filterTasks = text => {
 
 // add task
 addForm.addEventListener('submit', e => {
+  // todo from user
   const todo = taskInput.value.trim();
   
+  //if todo have length then it will generate a list
   if(todo.length) {
     generateTemplate(todo);
   }
 
+  //clearing input field after adding todo
   taskInput.value = '';
 
+  //display the clear button
   clear.style.display = 'block';
-
 
   e.preventDefault();
 });
 
 // remove task
 list.addEventListener('click', e => {
+  // deleting list element
   if (e.target.classList.contains('delete')) {
     e.target.parentElement.remove();
   }
