@@ -8,4 +8,5 @@ This is a simple __TODO__ aplication developed with html, css and JavaScript. Yo
 <img src="readmeimage/1.png" />
 
 ## Add TODO
+Write down your task and press __Enter__ or click on __Submit__ button.
 <img src="readmeimage/2.png" />
