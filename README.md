@@ -6,3 +6,6 @@ This is a simple __TODO__ aplication developed with html, css and JavaScript. Yo
 
 ## Landing Page
 <img src="readmeimage/1.png" />
+
+## Add TODO
+<img src="readmeimage/2.png" />
