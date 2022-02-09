@@ -15,5 +15,12 @@ Write down your task and press __Enter__ or click on __Submit__ button.
 ## Remove TODO
 To remove a __TODO__ click on __Remove__ icon.
 
-
 <img src="readmeimage/3.png" />
+
+## Search TODO
+
+<img src="readmeimage/4.png" />
+
+## Clear TODOS
+
+<img src="readmeimage/5.png" />
