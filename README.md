@@ -11,3 +11,9 @@ This is a simple __TODO__ aplication developed with html, css and JavaScript. Yo
 Write down your task and press __Enter__ or click on __Submit__ button.
 
 <img src="readmeimage/2.png" />
+
+## Remove TODO
+To remove a __TODO__ click on __Remove__ icon.
+
+
+<img src="readmeimage/3.png" />
